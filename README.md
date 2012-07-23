@@ -3,8 +3,12 @@ ginaCam
 
 Simple webcam interface to display pictures captured from a camera.
 
-The idea of this is to use a LinkSys NSLU2 running OpenWRT to act as a webcam.
-It will use 'motion' to monitor images from usb connected webcams and save
+The idea of this is to use a 
+<a href="http://en.wikipedia.org/wiki/NSLU2">LinkSys NSLU2</a> 
+running 
+<a href="http://openwrt.org">OpenWRT</a> to act as a webcam.
+It will use <a href="http://www.lavrsen.dk/foswiki/bin/view/Motion/">motion</a>
+ to monitor images from usb connected webcams and save
 images to disk if motion is detected.
 The scripts in this archive are to provide a simple user interface to allow
 the images to be viewed easily.
