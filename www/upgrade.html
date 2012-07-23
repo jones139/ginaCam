@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>Upgrade Web Interface</title>
+</head>
+<body>
+<h1>Upload New Web Interface Archive File</h1>
+<h2>Be Very Careful with this - it will break it if you do not upload the right file!</h2>
+<p>The file uploaded should be an uncompressed tar archive whose 
+root directory is /www.  Ie the archive should contain:
+  <ul>
+    <li>index.html</li>
+    <li>cgi-bin/</li>
+    <li>upgrade.html</li>
+  </ul>
+
+<form method='POST' enctype='multipart/form-data' action='/cgi-bin/upgrade.php'>
+File to upload: <input type=file name=upgradeFile><br>
+<br>
+<input type=submit value=Press> to upload the file!
+</form>
+</body>
+</html>
