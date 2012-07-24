@@ -7,11 +7,11 @@ $subDir = $_GET['subdir'];
 $realDir = $realBaseDir.$camId.'/'.$subDir;
 $wwwDir = $wwwBaseDir.$camId.'/'.$subDir;
 
-echo '<link rel="stylesheet" type="text/css" href="/webcam/webcam.css" />';
+echo '<link rel="stylesheet" type="text/css" href="'.$wwwBaseDir.'/css/webcam.css" />';
 
 echo "<h1>Browsing Camera ".$camId."/".$subDir."</h1>";
 echo '<p><a href="'.$wwwBaseDir.'">Home</a>'
-      .':<a href="/cgi-bin/browse.php?camid='.$camId.'">'.$camId.'</a>'
+      .':<a href="'.$wwwBaseDir.'/cgi-bin/browse.php?camid='.$camId.'">'.$camId.'</a>'
       .'</p>';
 
 
@@ -28,7 +28,7 @@ if (!is_dir($realDir)) {
     	   $entry = $fileList[$i];
            if ($entry != "." && $entry != "..") {
               if (is_dir($realDir.'/'.$entry)) {
-               	 echo '<a href="/cgi-bin/browse.php?camid='.$camId.
+               	 echo '<a href="'.$wwwBaseDir.'/cgi-bin/browse.php?camid='.$camId.
 		      '&subdir='.$subDir.'/'.$entry.'">'.$entry.'</a><br/>';
               }
     	   }
