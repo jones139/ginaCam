@@ -123,6 +123,7 @@ if (!is_dir($realDir)) {
       echo "</ul>";
 
       echo "<h2>Images<h2/>";
+      echo "<button id='playPauseButton'>Pause</button>";
       echo "<div id='imgGallery'>";
       for ($i = 0; $i<count($retObj['images']); $i++) {
 	$imgURL = $retObj['images'][$i];
@@ -138,9 +139,24 @@ if (!is_dir($realDir)) {
       echo '<link type="text/css" rel="stylesheet" href="../js/galleria/themes/classic/galleria.classic.css">';
       echo '<script type="text/javascript" src="'.$wwwBaseDir.'/js/galleria/galleria-1.2.7.min.js"></script>';
       echo '<script>'
+	.'  var GC={run:true};'
 	.'  $(function(){'
 	.'       Galleria.loadTheme("../js/galleria/themes/classic/galleria.classic.min.js");'
-        .'       Galleria.run("#imgGallery",{autoplay:500,transition:"fade"});'
+        .'       Galleria.run("#imgGallery",{'
+	.'                   autoplay:500,'
+	.'                   transition:"fade",'
+	.'                   transitionSpeed:100});'
+	.'   });'
+	.'  $("#playPauseButton").click(function(){'
+	.'       if (GC.run==true) {'
+	.'          $("#imgGallery").data("galleria").pause();'
+	.'          $("#playPauseButton").html("Play");'
+	.'          GC.run=false;'
+	.'       } else {'
+	.'          $("#imgGallery").data("galleria").play();'
+	.'          $("#playPauseButton").html("Pause");'
+	.'          GC.run=true;'
+	.'       }'
 	.'   });'
 	.'</script>';
 
