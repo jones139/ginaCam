@@ -75,27 +75,24 @@ if (!is_dir($realDir)) {
 	.$wwwBaseDir.'/css/webcam.css" />';
       echo '<script src="'.$wwwBaseDir.'/js/jquery-1.7.2.min.js"></script>';
       echo '<script src="'.$wwwBaseDir.'/js/jquery-ui-1.8.21.custom.min.js"></script>';
-      #echo '<script type="text/javascript" src="'.$wwwBaseDir.'/js/jquery.timers-1.2.js"></script>';
-      #echo '<script type="text/javascript" src="'.$wwwBaseDir
-#	.'/js/jquery.easing.1.3.js"></script>';
-      #echo '<script type="text/javascript" src="'.$wwwBaseDir
-#	.'/js/jquery.galleryview-3.0-dev.js"></script>';
-      #echo '<link type="text/css" rel="stylesheet" href="'.$wwwBaseDir
-#	.'/css/jquery.galleryview-3.0-dev.css" />';
+      echo '<script type="text/javascript" src="'.$wwwBaseDir.'/js/jquery.timers-1.2.js"></script>';
+      echo '<script type="text/javascript" src="'.$wwwBaseDir
+	.'/js/jquery.easing.1.3.js"></script>';
+      echo '<script type="text/javascript" src="'.$wwwBaseDir
+	.'/js/jquery.galleryview-3.0-dev.js"></script>';
+      echo '<link type="text/css" rel="stylesheet" href="'.$wwwBaseDir
+	.'/css/jquery.galleryview-3.0-dev.css" />';
 
-      #echo '<script type="text/javascript">'
-	#.'$(function(){'
-	#.'	$("#imgGallery").galleryView({'
-	#.'      transition_speed:1000,'
-	#.'      transition_interval:500,'
-	#.'      panel_animation:"fade",'
-	#.'      autoplay:true'
-	#.'      });'
-	#.'});'
-	#.'</script>';
-
-
-
+      echo '<script type="text/javascript">'
+	.'$(function(){'
+	.'	$("#imgGallery").galleryView({'
+	.'      transition_speed:1000,'
+	.'      transition_interval:500,'
+	.'      panel_animation:"fade",'
+	.'      autoplay:true'
+	.'      });'
+	.'});'
+	.'</script>';
 
 
       echo "<h1>Browsing Camera ".$camId."/".$subDir."</h1>";
@@ -123,26 +120,18 @@ if (!is_dir($realDir)) {
       echo "</ul>";
 
       echo "<h2>Images<h2/>";
-      echo "<div id='imgGallery'>";
+      echo "<ul id='imgGallery'>";
       for ($i = 0; $i<count($retObj['images']); $i++) {
 	$imgURL = $retObj['images'][$i];
 	$urlParts = (explode("/",$imgURL));
 	$imgFname = $urlParts[count($urlParts)-1];
-	echo ''
+	echo '<li>'
 	  .'<img class="thumbnail" src="'
-	  .$imgURL.'" alt="image...">';
+	  .$imgURL.'" alt="image..."></li>';
       }
-      echo "</div>";
+      echo "</ul>";
 
     }
-      echo '<link type="text/css" rel="stylesheet" href="../js/galleria/themes/classic/galleria.classic.css">';
-      echo '<script type="text/javascript" src="'.$wwwBaseDir.'/js/galleria/galleria-1.2.7.min.js"></script>';
-      echo '<script>'
-	.'  $(function(){'
-	.'       Galleria.loadTheme("../js/galleria/themes/classic/galleria.classic.min.js");'
-        .'       Galleria.run("#imgGallery",{autoplay:500,transition:"fade"});'
-	.'   });'
-	.'</script>';
 
 }
 ?>
