@@ -1,0 +1,57 @@
+<html>
+<head>
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/jstree.js"></script>
+</head>
+<body>
+<div id="treeDiv"></div>
+
+<script>
+//jQuery(function() {
+//   alert("calling jstree...");
+//   jQuery("#treeDiv").jstree({  
+//     "json_data" : {
+//           "data" : [
+//               { "data":"node1" },
+//               { "data":"node2" },
+//               { "data": [ {"data":"node3"},{"data":"node4"}] }
+//           ],
+          // "ajax" : {
+          //      "url" : function() {
+          //                 alert("url"); 
+          //                 return "cgi-bin/getDirs.php";
+          //              },
+          //      "data" : function (n) {
+          //          alert(n);
+          //          return n;
+          //      }
+          //},
+//        "plugins" : [ "themes", "json_data" ]
+//     }
+//   });
+//});
+
+$(function () {
+	$("#treeDiv").jstree({ 
+		"json_data" : {
+			"data" : [
+				{ 
+					"data" : "A node", 
+					"metadata" : { id : 23 },
+					"children" : [ "Child 1", "A Child 2" ]
+				},
+				{ 
+					"attr" : { "id" : "li.node.id1" }, 
+					"data" : { 
+						"title" : "Long format demo", 
+						"attr" : { "href" : "#" } 
+					} 
+				}
+			]
+		},
+		"plugins" : [ "themes", "json_data", "ui" ]
+	}).bind("select_node.jstree", function (e, data) { alert(data.rslt.obj.data("id")); });
+});
+</script>
+</body>
+</html>
