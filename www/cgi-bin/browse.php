@@ -1,4 +1,4 @@
-#!/usr/bin/php-cgi
+<!--#!/usr/bin/php-cgi-->
 <?php
 include('config.php');
 $camId = $_GET['camid'];
@@ -6,7 +6,7 @@ $subDir = $_GET['subdir'];
 $ajax = $_GET['ajax'];
 
 $realDir = $realBaseDir.$camId.'/'.$subDir;
-$wwwDir = $wwwBaseDir.$camId.'/'.$subDir;
+$wwwDir = $wwwFilesDir.$camId.'/'.$subDir;
 
 $retObj = array();
 

@@ -1,6 +1,11 @@
 <?php
 #echo "<h1>config.php</h1>";
-$realBaseDir = "/tmp/";
-$wwwBaseDir = "/";
+# The actual base directory of this application's data files.
+$realBaseDir = "/var/www/ginaCam/files/";
+# The URL folder of this application.
+$wwwBaseDir = "/ginaCam/";
+
+# The URL folder of the application's data files.
+$wwwFilesDir = "/ginaCam/files/"
 
 ?>
